@@ -16,7 +16,7 @@ suite('Functional Tests', function() {
             .get('/api/convert'/*?input=10L*/)
             .query({input: '10L'})
             .end((err, res) => {
-                assert.equal(res.status, 200)
+                assert.equal(res.status, 200).
                 assert.equal(res.body.initNum, 10)
                 assert.equal(res.body.initUnit, 'L')
                 assert.equal(res.body.returnNum, 2.64172)
@@ -62,13 +62,13 @@ suite('Functional Tests', function() {
             chai
             .request(server)
             .get('/api/convert')
-            .query({input: 'kg'})
+            .query({ input: 'kg' })
             .end((err, res) => {
-                assert.equal(res.body.initNum, 1)
-                assert.equal(res.body.initUnit, 'kg')
-                assert.equal(res.body.returnNum, 2.20462)
-                assert.equal(res.body.returnUnit, 'lbs')
-                done()
+            assert.equal(res.body.initNum, 1);
+            assert.equal(res.body.initUnit, 'kg');
+            assert.equal(res.body.returnNum, 2.20462);
+            assert.equal(res.body.returnUnit, 'lbs');
+            done();
             })
         })
     })
